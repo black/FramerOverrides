@@ -1,5 +1,5 @@
 // SlotDemo.tsx
-import { Frame, addPropertyControls, ControlType } from "framer"
+import { Stack, addPropertyControls, ControlType } from "framer"
 import * as React from "react"
 
 export function SlotDemo(props) {
@@ -8,19 +8,9 @@ export function SlotDemo(props) {
     const layout = direction ? "row" : "column"
 
     return (
-        <Frame
-            width="100%"
-            height="100%"
-            background="none"
-            overflow="hidden"
-            style={{
-                display: "flex",
-                flexDirection: layout,
-                gap: `${gap}px`,
-            }}
-        >
+        <Stack width="100%" height="100%" gap={gap} direction={layout}>
             {items}
-        </Frame>
+        </Stack>
     )
 }
 
